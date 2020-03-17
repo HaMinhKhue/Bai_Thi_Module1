@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="drawCircle()">
+<canvas id="myCanvas" width="400" height="200" style="border:1px solid #000000;"></canvas>
+<script>
+Circle=function (x,y,radius) {
+    this.x=x;
+    this.y=y;
+    this.radius=radius;
+    this.getColor=function (red,blue,green) {
+        "rgb(" + red + "," + blue + "," + green +")";
+    }
+};
+
+function drawCircle() {
+    cxt=document.getElementById('myCanvas').getContext("2d");
+    circle=new Circle(10,10,100);
+    cxt.beginPath();
+    cxt.arc(circle.x,circle.y,circle.radius,0,2*Math.PI);
+    cxt.fillStyle=circle.getColor(0,0,0);
+    cxt.fill()
+}
+drawCircle()
+</script>
+</body>
+</html>

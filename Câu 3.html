@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   function fibonacciArray(x) {
+       x=parseInt(x);
+       m = 0;
+       n = 1;
+       a = 1;
+       newfibonacciArray=[];
+       while (n <= x) {
+           a = m + n;
+           m = n;
+           n = a;
+           newfibonacciArray.push(a)
+       }
+       return newfibonacciArray//dãy các số fibonaci<=x
+   }
+   function isFibonaci(x) {
+       if(x<0||isNaN(x)){
+           return false
+       }else{
+           if((fibonacciArray(x).includes(x))===true){
+               return true
+       }
+      }
+      return false
+   }
+   alert(isFibonaci(8))
+</script>
+</body>
+</html>
